@@ -31,7 +31,7 @@ const updateProduct = async(req, res)=>{
 const patchProduct = async(req, res)=>{
     const {id} = req.params; 
     const {stock}= req.body 
-    const product = await prisma.product.update({where: {id: parseInt(id)}, data: {name, stock, price}})
+    const product = await prisma.product.update({where: {id: parseInt(id)}, data: {stock}})
     res.status(200).json(product)
 }
 
